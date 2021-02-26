@@ -55,7 +55,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "mooc-fso2020-part11-phonebook"
           heroku_email: "markus.erapolku@gmail.com"
-          healthcheck: "https://mooc-fso2020-part11-phonebook.herokuapp.com/health"
+          healthcheck: "https://mooc-fso2020-part11-phonebook.herokuapp.com/api/health"
           checkstring: "ok"
           delay: 5
           rollbackonhealthcheckfailed: true
