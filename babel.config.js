@@ -3,7 +3,7 @@ module.exports = (api) => {
 
   const presets = [
     ['@babel/preset-env', {
-      modules: false,
+      modules: 'auto',
     }],
     '@babel/preset-react',
   ];
