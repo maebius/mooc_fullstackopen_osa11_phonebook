@@ -15,4 +15,13 @@ router.post('/persons', people.create);
 router.get('/persons', people.getAll);
 router.get('/info', people.getInfo);
 
+router.get('/health', (req, res) => 
+{
+  res.send('ok');
+});
+router.get('/version', (req, res) => 
+{
+  res.send('1');
+});
+
 module.exports = router;
