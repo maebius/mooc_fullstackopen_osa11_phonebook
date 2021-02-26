@@ -33,20 +33,22 @@ jobs:
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-        if: ${{ failure() && false }}
+        if: ${{ failure() }}
 
       - name: test
         run: npm run test
       
       - name: e2e tests
         uses: cypress-io/github-action@v2
+        env:
+          PORT: ${{ secrets.PORT }} # required
         with:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3001
 
       - name: deploy
-        if: ${{ github.event_name == 'push' && false &&
+        if: ${{ github.event_name == 'push' &&
           contains(join(env.COMMIT_MESSAGES, ','), '#skip') == false }}
         uses: akhileshns/heroku-deploy@v3.11.10
         with:
@@ -77,7 +79,7 @@ jobs:
         if: ${{ success() }}
         
       - name: Bump version and push tag
-        if: ${{ github.event_name == 'push' && false &&
+        if: ${{ github.event_name == 'push' &&
           contains(join(env.COMMIT_MESSAGES, ','), '#skip') == false }}
         uses: anothrNick/github-tag-action@1.33.0
         env:
