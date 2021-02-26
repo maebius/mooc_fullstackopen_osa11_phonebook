@@ -1,5 +1,5 @@
 import React from 'react';
-import Person from './Person';
+import Person from 'Components/Person';
 
 const Persons = ({persons, handleDelete}) => 
 {

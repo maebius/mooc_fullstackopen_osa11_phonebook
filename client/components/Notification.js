@@ -1,5 +1,5 @@
 import React from 'react';
-import './Notification.css'
+import 'Components/Notification.css'
 
 const Notification = ({message, styleClass}) =>
 {

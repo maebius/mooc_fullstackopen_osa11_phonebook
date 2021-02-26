@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import FilterForm from './FilterForm';
-import AddPersonForm from './AddPersonForm';
-import Persons from './Persons';
-import personService from './services/personService';
-import Notification from './Notification'
+import FilterForm from 'Components/FilterForm';
+import AddPersonForm from 'Components/AddPersonForm';
+import Persons from 'Components/Persons';
+import personService from 'Utilities/services/personService';
+import Notification from 'Components/Notification';
 
 const App = () => 
 {
