@@ -6,7 +6,7 @@ const Person = ({ person, handleDelete }) => (
     {' '}
     {person.number}
 &nbsp;
-    <button onClick={() => handleDelete(person)}>delete</button>
+    <button type="button" onClick={() => handleDelete(person)}>delete</button>
   </div>
 );
 

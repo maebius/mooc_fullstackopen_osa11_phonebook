@@ -58,7 +58,7 @@ const App = () => {
               (p) => (p.id !== found.id ? p : data),
             ));
           })
-          .catch((response) => {
+          .catch((_response) => {
             setNewName('');
             setNewNumber('');
             errorAlreadyDeleted(found);
@@ -126,7 +126,7 @@ const App = () => {
             }, 5000);
           }
         })
-        .catch((response) => {
+        .catch((_response) => {
           errorAlreadyDeleted(person);
         });
     }

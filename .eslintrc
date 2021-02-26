@@ -2,8 +2,15 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
-    "browser": true
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest/globals": true,
+    "cypress/globals": true
   },
+  "plugins": [
+    "react", "jest", "cypress"
+  ],
   "rules": {
     "semi": [
       "error",
@@ -19,6 +26,10 @@
       {
         "skipUndeclared": true
       }
+    ],
+    "no-unused-vars": [
+      "error", 
+      { "argsIgnorePattern": "^_" }
     ]
   }
 }
