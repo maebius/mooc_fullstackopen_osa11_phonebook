@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const MessageList = ({ messages, deleteMessage }) => {
-  if (!messages) return null
+  if (!messages) return null;
 
   const handleDelete = (message) => () => {
-    deleteMessage(message)
-  }
+    deleteMessage(message);
+  };
 
   return (
     <ul>
@@ -18,8 +18,8 @@ const MessageList = ({ messages, deleteMessage }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 
-export default MessageList
+export default MessageList;

@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const MessageForm = ({ postMessage }) => {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
 
   const handleSubmit = () => {
-    postMessage(message)
-  }
+    postMessage(message);
+  };
 
-  const handleChange = ({ target }) => setMessage(target.value)
+  const handleChange = ({ target }) => setMessage(target.value);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const MessageForm = ({ postMessage }) => {
         Send!
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default MessageForm
+export default MessageForm;

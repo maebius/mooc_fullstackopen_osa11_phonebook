@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { getMessages, postMessage, deleteMessage } from 'Utilities/services/messages'
+import React, { useState, useEffect } from 'react';
+import { getMessages, postMessage, deleteMessage } from 'Utilities/services/messages';
 
-import MessageForm from 'Components/MessageView/MessageForm'
-import MessageList from 'Components/MessageView/MessageList'
+import MessageForm from 'Components/MessageView/MessageForm';
+import MessageList from 'Components/MessageView/MessageList';
 
 const MessageView = () => {
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([]);
 
   const handleGetMessages = async () => {
-    const newMessages = await getMessages()
-    setMessages(newMessages)
-  }
+    const newMessages = await getMessages();
+    setMessages(newMessages);
+  };
 
   useEffect(() => {
-    handleGetMessages()
-  }, [])
+    handleGetMessages();
+  }, []);
 
   const handlePostMessage = async (newMessage) => {
-    await postMessage(newMessage)
-    handleGetMessages()
-  }
+    await postMessage(newMessage);
+    handleGetMessages();
+  };
 
   const handleDeleteMessage = async (message) => {
-    await deleteMessage(message)
-    handleGetMessages()
-  }
+    await deleteMessage(message);
+    handleGetMessages();
+  };
 
   return (
     <>
@@ -32,6 +32,6 @@ const MessageView = () => {
       <MessageForm postMessage={handlePostMessage} />
       <MessageList messages={messages} deleteMessage={handleDeleteMessage} />
     </>
-  )
-}
-export default MessageView
+  );
+};
+export default MessageView;
